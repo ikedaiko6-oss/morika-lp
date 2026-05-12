@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杜花 | 掌焙煎珈琲</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --roast: #7a4b28;
+    --forest: #3a5240;
+    --ash: #c8b89a;
+    --cream: #ede5d4;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--forest);
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem 3rem;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(122,75,40,0.3) 0%, transparent 70%);
+  }
+
+  .tree-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.12;
+  }
+
+  .tree-svg {
+    width: 80%;
+    height: 80%;
+  }
+
+  .hero-logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-logo .kanji {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 800;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: block;
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-logo .reading {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--ash);
+    letter-spacing: 0.35em;
+    margin-top: 0.5rem;
+    display: block;
+    animation: fadeUp 1.2s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3.5rem;
+    position: relative;
+  }
+
+  .hero-tagline {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.8;
+    color: var(--ink);
+    animation: fadeUp 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-sub {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    line-height: 2;
+    color: #5a4f44;
+    letter-spacing: 0.05em;
+    animation: fadeUp 1.2s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--roast);
+    margin: 2rem 0;
+    animation: expand 1.2s 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: #8a7d6e;
+    animation: fadeIn 2s 1s both;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--ash);
+    animation: expand 1s 1.2s both;
+  }
+
+  /* ── CONCEPT ── */
+  .concept {
+    padding: 8rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    color: var(--roast);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  .concept-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+
+  .concept-body {
+    font-size: 0.95rem;
+    line-height: 2.2;
+    color: #5a4f44;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── BEANS ── */
+  .beans {
+    background: var(--ink);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .beans::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(122,75,40,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .beans-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .beans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .beans-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.4;
+  }
+
+  .beans-note {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--ash);
+  }
+
+  .beans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+  }
+
+  .bean-card {
+    background: #241e18;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+    cursor: default;
+  }
+
+  .bean-card:hover { background: #2e2620; }
+
+  .bean-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--roast);
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bean-card:hover::before { width: 100%; }
+
+  .bean-origin {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    color: var(--roast);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .bean-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: 1.2rem;
+  }
+
+  .bean-desc {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: #9a8d7e;
+  }
+
+  .bean-flag {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #5a4f44;
+  }
+
+  /* ── PROCESS ── */
+  .process {
+    padding: 8rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .process-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: calc(16.66% + 1rem);
+    right: calc(16.66% + 1rem);
+    height: 1px;
+    background: var(--ash);
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-num {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--ash);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    color: var(--roast);
+    background: var(--paper);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  .step-body {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: #6a5f54;
+  }
+
+  /* ── CTA ── */
+  .cta {
+    background: var(--forest);
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(122,75,40,0.4) 0%, transparent 60%);
+  }
+
+  .cta-inner { position: relative; z-index: 1; }
+
+  .cta-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-sub {
+    font-size: 0.85rem;
+    color: var(--ash);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 1.1rem 3.5rem;
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s;
+  }
+
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--paper);
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cta-btn:hover { color: var(--forest); }
+  .cta-btn:hover::before { transform: translateX(0); }
+
+  .cta-btn span { position: relative; z-index: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--ash);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: #9a8d7e;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes expand {
+    from { transform: scaleX(0); transform-origin: left; }
+    to   { transform: scaleX(1); transform-origin: left; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { min-height: 50vh; padding: 3rem 2rem; }
+    .hero-right { padding: 3rem 2rem 5rem; }
+    .beans-grid { grid-template-columns: 1fr; gap: 1px; }
+    .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+    .process-steps::before { display: none; }
+    .beans-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="tree-bg">
+      <svg class="tree-svg" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 280 L100 140" stroke="#f5f0e8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M100 200 L60 160" stroke="#f5f0e8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M100 170 L140 130" stroke="#f5f0e8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M100 240 L65 210" stroke="#f5f0e8" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="100" cy="90" rx="60" ry="75" fill="#f5f0e8" opacity="0.5"/>
+        <ellipse cx="60" cy="120" rx="35" ry="45" fill="#f5f0e8" opacity="0.35"/>
+        <ellipse cx="140" cy="110" rx="40" ry="50" fill="#f5f0e8" opacity="0.35"/>
+        <circle cx="40" cy="150" r="4" fill="#f5f0e8" opacity="0.5"/>
+        <circle cx="155" cy="140" r="3" fill="#f5f0e8" opacity="0.5"/>
+        <circle cx="80" cy="50" r="3" fill="#f5f0e8" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="hero-logo">
+      <span class="kanji">杜花</span>
+      <span class="reading">もりか — 掌焙煎珈琲</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <p class="hero-tagline">
+      森の中で、<br>
+      一粒一粒を<br>
+      手で焼く。
+    </p>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      人里離れた、岐阜・瑞浪の森から。<br>
+      掌焙煎、それだけのコーヒー。<br>
+      その日の気温と、豆の声を聞きながら。
+    </p>
+    <div class="scroll-hint">
+      <span class="scroll-line"></span>
+      <span>SCROLL</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <p class="section-label reveal">concept</p>
+  <h2 class="concept-title reveal">
+    余計なものを<br>足さない。
+  </h2>
+  <p class="concept-body reveal">
+    機械も、添加物も、使いません。<br>
+    掌と炎と、手の感覚だけ。<br><br>
+    良い豆を、正直な方法で焼く。<br>
+    それが杜花のすべてです。
+  </p>
+</section>
+
+<!-- BEANS -->
+<section class="beans">
+  <div class="beans-inner">
+    <div class="beans-header reveal">
+      <h2 class="beans-title">
+        いま焼いている、<br>三つの豆。
+      </h2>
+    
+    </div>
+    <div class="beans-grid">
+      <div class="bean-card reveal">
+        <span class="bean-origin">Ethiopia</span>
+        <span class="bean-flag">推し</span>
+        <h3 class="bean-name">アモト</h3>
+        <p class="bean-desc">
+          花のような香り、柑橘の余韻。<br>
+          焙煎するたびに表情が変わる。<br>
+          一番好きな豆です。
+        </p>
+      </div>
+      <div class="bean-card reveal">
+        <span class="bean-origin">Colombia</span>
+        <h3 class="bean-name">ウツシ</h3>
+        <p class="bean-desc">
+          甘く、まろやか。<br>
+          誰にでも寄り添う、<br>
+          やさしいコーヒー。
+        </p>
+      </div>
+      <div class="bean-card reveal">
+        <span class="bean-origin">Brazil</span>
+        <h3 class="bean-name">カムナ</h3>
+        <p class="bean-desc">
+          ナッツの香ばしさ、<br>
+          深くて落ち着いた苦味。<br>
+          朝に飲みたい一杯。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-header">
+    <p class="section-label reveal">process</p>
+    <h2 class="concept-title reveal">焙煎の手順</h2>
+  </div>
+  <div class="process-steps">
+    <div class="step reveal">
+      <div class="step-num">一</div>
+      <h3 class="step-title">豆を選ぶ</h3>
+      <p class="step-body">
+        その日の気分と季節で<br>
+        豆を決める。<br>
+        正直な選択。
+      </p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">二</div>
+      <h3 class="step-title">掌で焼く</h3>
+      <p class="step-body">
+        手を止めずに振り続ける。<br>
+        音と色と香りで<br>
+        焼き加減を知る。
+      </p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">三</div>
+      <h3 class="step-title">届ける</h3>
+      <p class="step-body">
+        焙煎日をそのまま記す。<br>
+        鮮度と正直さが<br>
+        唯一の包装。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2 class="cta-title reveal">
+      焙煎したての豆を、<br>
+      あなたのもとへ。
+    </h2>
+    <p class="cta-sub reveal">BASE にて販売中 — 送料込み・少量から</p>
+    <a href="#" class="cta-btn reveal"><span>お買い求めはこちら</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">杜花</span>
+  <span class="footer-copy">掌焙煎珈琲 — 岐阜・瑞浪の森から</span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
