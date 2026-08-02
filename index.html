@@ -364,7 +364,74 @@
 
   .process-header {
     text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .process-visual {
     margin-bottom: 5rem;
+  }
+
+  .process-photo {
+    overflow: hidden;
+    background: var(--ink);
+    border-radius: 2px;
+    box-shadow: 0 24px 50px -28px rgba(26,20,16,0.7);
+  }
+
+  .process-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .process-stage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 1px;
+    background: var(--ash);
+  }
+
+  .process-stage {
+    background: var(--cream);
+    padding: 1.25rem 1.4rem;
+  }
+
+  .process-stage-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .process-stage-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--roast);
+  }
+
+  .process-stage-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .process-stage-detail {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.72rem;
+    line-height: 1.7;
+    color: #74685c;
+  }
+
+  .process-caption {
+    max-width: 640px;
+    margin: 1.7rem auto 0;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #6a5f54;
   }
 
   .process-steps {
@@ -541,6 +608,14 @@
     .beans-grid { grid-template-columns: 1fr; gap: 1px; }
     .process-steps { grid-template-columns: 1fr; gap: 2rem; }
     .process-steps::before { display: none; }
+    .process { padding: 6rem 1.25rem; }
+    .process-visual { margin-bottom: 4rem; }
+    .process-stage { padding: 0.9rem 0.45rem; text-align: center; }
+    .process-stage-head { display: block; }
+    .process-stage-num { display: block; margin-bottom: 0.25rem; }
+    .process-stage-name { font-size: 0.82rem; }
+    .process-stage-detail { display: none; }
+    .process-caption { padding: 0 0.5rem; font-size: 0.78rem; }
     .beans-header { flex-direction: column; align-items: flex-start; }
   }
 </style>
@@ -667,6 +742,47 @@
     <p class="section-label reveal">process</p>
     <h2 class="concept-title reveal">焙煎の手順</h2>
   </div>
+  <figure class="process-visual reveal">
+    <div class="process-photo">
+      <img
+        src="images/roasting-process.webp"
+        alt="瑞浪の森で、備長炭を使い生豆から煎り上がりまで掌焙煎する三段階"
+        width="1629"
+        height="966"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+    <figcaption>
+      <div class="process-stage-grid" aria-label="焙煎の三段階">
+        <div class="process-stage">
+          <div class="process-stage-head">
+            <span class="process-stage-num">01</span>
+            <strong class="process-stage-name">煎り始め</strong>
+          </div>
+          <span class="process-stage-detail">生豆の青白さを見ながら、弱い火から。</span>
+        </div>
+        <div class="process-stage">
+          <div class="process-stage-head">
+            <span class="process-stage-num">02</span>
+            <strong class="process-stage-name">火が入る</strong>
+          </div>
+          <span class="process-stage-detail">音と香りが立ち、豆が飴色へ変わる。</span>
+        </div>
+        <div class="process-stage">
+          <div class="process-stage-head">
+            <span class="process-stage-num">03</span>
+            <strong class="process-stage-name">煎り上がり</strong>
+          </div>
+          <span class="process-stage-detail">崩れた炭の残り火で、深い褐色へ。</span>
+        </div>
+      </div>
+      <p class="process-caption">
+        備長炭の火を読み、籠を振り続ける。<br>
+        色・音・香りの変化を、掌で確かめながら焼いています。
+      </p>
+    </figcaption>
+  </figure>
   <div class="process-steps">
     <div class="step reveal">
       <div class="step-num">一</div>
