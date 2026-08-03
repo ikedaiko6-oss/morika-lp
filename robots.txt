@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://morika-lp.vercel.app/sitemap.xml

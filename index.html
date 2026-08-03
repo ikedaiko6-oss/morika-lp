@@ -4,18 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="BwYCHT9dDEjR4gjpQQFRvR9N5mAC6qT9rZayF56_L6o" />
-<meta name="description" content="岐阜県瑞浪市の森で丁寧に手焙煎したコーヒー豆。一度に焙煎できるのは100gだけ。自家焙煎のため月産500g限定。ギフトやお試しに。">
+<meta name="description" content="岐阜県瑞浪市の森で、備長炭の火を読みながら一度100gずつ手焙煎する杜花（もりか）のコーヒー豆。月産500g限定でオンライン販売しています。">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#3a5240">
 <link rel="canonical" href="https://morika-lp.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="杜花">
-<meta property="og:title" content="杜花（もりか）｜岐阜・瑞浪の掌焙煎珈琲">
-<meta property="og:description" content="森の中で、一粒一粒を手で焼く。月産500g限定の掌焙煎珈琲。">
+<meta property="og:title" content="杜花（もりか）｜岐阜・瑞浪の森で手焙煎するコーヒー豆">
+<meta property="og:description" content="備長炭の火を読みながら、一度100gずつ。月産500g限定で届ける杜花の掌焙煎珈琲。">
 <meta property="og:url" content="https://morika-lp.vercel.app/">
 <meta property="og:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
+<meta property="og:image:alt" content="岐阜県瑞浪市の森で備長炭を使い、コーヒー豆を手焙煎する様子">
 <meta name="twitter:card" content="summary_large_image">
-<title>杜花（もりか）| 岐阜瑞浪の自家焙煎コーヒー豆</title>
+<meta name="twitter:title" content="杜花（もりか）｜岐阜・瑞浪の森で手焙煎するコーヒー豆">
+<meta name="twitter:description" content="備長炭の火を読みながら、一度100gずつ。月産500g限定で届ける杜花の掌焙煎珈琲。">
+<meta name="twitter:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
+<meta name="twitter:image:alt" content="岐阜県瑞浪市の森で備長炭を使い、コーヒー豆を手焙煎する様子">
+<title>杜花（もりか）｜岐阜・瑞浪の森で手焙煎するコーヒー豆</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://morika-lp.vercel.app/#organization",
+      "name": "杜花",
+      "alternateName": "もりか",
+      "url": "https://morika-lp.vercel.app/",
+      "description": "岐阜県瑞浪市の森で、備長炭の火を読みながら少量ずつコーヒー豆を手焙煎する杜花。",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://morika-lp.vercel.app/images/roasting-fire.jpg"
+      },
+      "sameAs": [
+        "https://morikacoffee.base.shop/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://morika-lp.vercel.app/#website",
+      "url": "https://morika-lp.vercel.app/",
+      "name": "杜花",
+      "alternateName": "杜花（もりか）",
+      "description": "岐阜・瑞浪の森で備長炭を使い、一度100gずつ手焙煎するコーヒー豆。",
+      "inLanguage": "ja-JP",
+      "publisher": {
+        "@id": "https://morika-lp.vercel.app/#organization"
+      }
+    }
+  ]
+}
+</script>
 <link rel="preload" as="image" href="images/roasting-fire.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -555,6 +595,51 @@
     color: #6a5f54;
   }
 
+  /* ── FAQ ── */
+  .faq {
+    padding: 2rem 2rem 8rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--ash);
+    border: 1px solid var(--ash);
+  }
+
+  .faq-item {
+    background: var(--paper);
+    padding: 2rem;
+  }
+
+  .faq-question {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .faq-answer {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    line-height: 2;
+    color: #6a5f54;
+  }
+
+  .faq-answer a {
+    color: var(--forest);
+    text-underline-offset: 0.3em;
+  }
+
   /* ── CTA ── */
   .cta {
     background: var(--forest);
@@ -685,6 +770,9 @@
     .process-stage-name { font-size: 0.82rem; }
     .process-stage-detail { display: none; }
     .process-caption { padding: 0 0.5rem; font-size: 0.78rem; }
+    .faq { padding: 0 1.25rem 6rem; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-item { padding: 1.5rem; }
     .beans-header { flex-direction: column; align-items: flex-start; }
     .hero-actions { align-items: flex-start; flex-direction: column; }
     .hero-cta { width: 100%; }
@@ -902,6 +990,32 @@
       </p>
     </div>
   </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" aria-labelledby="faq-title">
+  <div class="faq-header">
+    <p class="section-label reveal">about morika</p>
+    <h2 class="concept-title reveal" id="faq-title">杜花のコーヒーについて</h2>
+  </div>
+  <dl class="faq-grid">
+    <div class="faq-item reveal">
+      <dt class="faq-question">どこで焙煎していますか？</dt>
+      <dd class="faq-answer">岐阜県瑞浪市の、人里から離れた森で焙煎しています。その日の気温や湿度、豆の状態を確かめながら焼いています。</dd>
+    </div>
+    <div class="faq-item reveal">
+      <dt class="faq-question">どのように焙煎していますか？</dt>
+      <dd class="faq-answer">備長炭の火を読み、蓋付きの網籠を手で振り続ける掌焙煎です。色・音・香りの変化を見ながら、一度100gずつ仕上げます。</dd>
+    </div>
+    <div class="faq-item reveal">
+      <dt class="faq-question">どんなコーヒー豆がありますか？</dt>
+      <dd class="faq-answer">エチオピアの「アモト」、コロンビアの「ウツシ」、ブラジルの「カムナ」の三種です。いずれも100g単位でお届けします。</dd>
+    </div>
+    <div class="faq-item reveal">
+      <dt class="faq-question">どこで購入できますか？</dt>
+      <dd class="faq-answer">月産500g限定で、<a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=faq" target="_blank" rel="noopener">杜花の公式オンラインストア</a>にて販売しています。売り切れの際は、次の焙煎をお待ちください。</dd>
+    </div>
+  </dl>
 </section>
 
 <!-- CTA -->
