@@ -98,6 +98,35 @@
           }
         }
       ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://morika-lp.vercel.app/#roast-log-2026-08-03",
+      "headline": "焙煎記録｜タンザニア キリマンジャロ",
+      "description": "タンザニア・キリマンジャロ、ンゴロンゴロ コンゴニ農園、アガワルファミリー、ウォッシュド AAの試験焙煎記録。",
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "inLanguage": "ja-JP",
+      "author": {
+        "@id": "https://morika-lp.vercel.app/#organization"
+      },
+      "publisher": {
+        "@id": "https://morika-lp.vercel.app/#organization"
+      },
+      "image": [
+        "https://morika-lp.vercel.app/images/tanzania-kilimanjaro-label.jpg",
+        "https://morika-lp.vercel.app/images/tanzania-kilimanjaro-green-beans.jpg"
+      ],
+      "about": [
+        "タンザニア キリマンジャロ",
+        "ンゴロンゴロ コンゴニ農園",
+        "アガワルファミリー",
+        "ウォッシュド AA",
+        "備長炭直火焙煎"
+      ],
+      "isPartOf": {
+        "@id": "https://morika-lp.vercel.app/#webpage"
+      }
     }
   ]
 }
@@ -641,6 +670,140 @@
     color: #6a5f54;
   }
 
+  /* ── ROAST LOG ── */
+  .roast-log {
+    padding: 8rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .roast-log-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .roast-log-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .roast-log .section-label { color: var(--ash); }
+
+  .roast-log-title {
+    margin-top: 0.7rem;
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+  }
+
+  .roast-log-date {
+    padding-bottom: 0.45rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: #a99b8c;
+    white-space: nowrap;
+  }
+
+  .roast-log-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    gap: 1px;
+    background: #41362e;
+  }
+
+  .roast-log-photos {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 1px;
+    min-height: 620px;
+    background: #41362e;
+  }
+
+  .roast-log-photo {
+    overflow: hidden;
+    background: #211914;
+  }
+
+  .roast-log-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .roast-log-photo--label img { object-position: 50% 68%; }
+  .roast-log-photo--beans img { object-position: 52% 61%; }
+
+  .roast-log-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 4.5rem);
+    background: #241c17;
+  }
+
+  .roast-log-status {
+    margin-bottom: 1.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: var(--ash);
+  }
+
+  .roast-log-bean {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .roast-log-origin {
+    margin-top: 0.55rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: #a99b8c;
+  }
+
+  .roast-log-story {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    line-height: 2.15;
+    color: #d4c9bc;
+  }
+
+  .roast-log-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #4a3d34;
+  }
+
+  .roast-log-data dt {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: #8f8173;
+  }
+
+  .roast-log-data dd {
+    margin-top: 0.3rem;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: var(--paper);
+  }
+
+  .roast-log-note {
+    margin-top: 2rem;
+    font-size: 0.68rem;
+    line-height: 1.8;
+    color: #8f8173;
+  }
+
   /* ── FAQ ── */
   .faq {
     padding: 2rem 2rem 8rem;
@@ -858,6 +1021,12 @@
     .process-stage-name { font-size: 0.82rem; }
     .process-stage-detail { display: none; }
     .process-caption { padding: 0 0.5rem; font-size: 0.78rem; }
+    .roast-log { padding: 6rem 1.25rem; }
+    .roast-log-header { align-items: flex-start; flex-direction: column; gap: 1rem; }
+    .roast-log-date { padding-bottom: 0; }
+    .roast-log-grid { grid-template-columns: 1fr; }
+    .roast-log-photos { min-height: 540px; }
+    .roast-log-copy { padding: 2.5rem 1.5rem; }
     .faq { padding: 0 1.25rem 6rem; }
     .facts-card { padding: 1.5rem; }
     .facts-list { grid-template-columns: 1fr; gap: 1rem; }
@@ -1081,6 +1250,73 @@
     </div>
   </div>
 </section>
+
+<!-- ROAST LOG -->
+<article class="roast-log" id="roast-log-2026-08-03" aria-labelledby="roast-log-title">
+  <div class="roast-log-inner">
+    <header class="roast-log-header reveal">
+      <div>
+        <p class="section-label">roast log</p>
+        <h2 class="roast-log-title" id="roast-log-title">森の焙煎記録</h2>
+      </div>
+      <time class="roast-log-date" datetime="2026-08-03">2026.08.03</time>
+    </header>
+    <div class="roast-log-grid reveal">
+      <div class="roast-log-photos" aria-label="タンザニア キリマンジャロの生豆">
+        <figure class="roast-log-photo roast-log-photo--label">
+          <img
+            src="images/tanzania-kilimanjaro-label.jpg"
+            alt="タンザニア キリマンジャロ、ンゴロンゴロ コンゴニ農園の生豆ラベル"
+            width="675"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          >
+        </figure>
+        <figure class="roast-log-photo roast-log-photo--beans">
+          <img
+            src="images/tanzania-kilimanjaro-green-beans.jpg"
+            alt="網籠に入れたタンザニア キリマンジャロの生豆"
+            width="675"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          >
+        </figure>
+      </div>
+      <div class="roast-log-copy">
+        <p class="roast-log-status">TEST ROAST / 01</p>
+        <h3 class="roast-log-bean">タンザニア<br>キリマンジャロ</h3>
+        <p class="roast-log-origin">TANZANIA · KILIMANJARO</p>
+        <p class="roast-log-story">
+          今日の一籠は、ンゴロンゴロの生豆。<br>
+          焙煎前の色、粒の揃い、手触りを確かめてから、
+          瑞浪の森で備長炭の直火へ。蓋付きの網籠を振り、
+          音と香りが立つ瞬間を追いました。
+        </p>
+        <dl class="roast-log-data">
+          <div>
+            <dt>FARM</dt>
+            <dd>ンゴロンゴロ<br>コンゴニ農園</dd>
+          </div>
+          <div>
+            <dt>PRODUCER</dt>
+            <dd>アガワル<br>ファミリー</dd>
+          </div>
+          <div>
+            <dt>PROCESS</dt>
+            <dd>ウォッシュド</dd>
+          </div>
+          <div>
+            <dt>GRADE</dt>
+            <dd>AA</dd>
+          </div>
+        </dl>
+        <p class="roast-log-note">※ 生豆の個性を確かめるための試験焙煎です。販売時期は未定です。</p>
+      </div>
+    </div>
+  </div>
+</article>
 
 <!-- FAQ -->
 <section class="faq" aria-labelledby="faq-title">
