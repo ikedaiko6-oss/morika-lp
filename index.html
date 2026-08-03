@@ -22,6 +22,7 @@
 <meta name="twitter:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
 <meta name="twitter:image:alt" content="岐阜県瑞浪市の森で備長炭を使い、コーヒー豆を手焙煎する様子">
 <title>杜花（もりか）｜岐阜・瑞浪の森で手焙煎するコーヒー豆</title>
+<link rel="alternate" type="text/plain" href="https://morika-lp.vercel.app/llms.txt" title="杜花のAI向け公式情報">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,6 +53,51 @@
       "publisher": {
         "@id": "https://morika-lp.vercel.app/#organization"
       }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://morika-lp.vercel.app/#webpage",
+      "url": "https://morika-lp.vercel.app/",
+      "name": "杜花（もりか）｜岐阜・瑞浪の森で手焙煎するコーヒー豆",
+      "description": "岐阜県瑞浪市の森で、備長炭の直火を読みながら一度100gずつ手焙煎する杜花の公式ページ。",
+      "isPartOf": {
+        "@id": "https://morika-lp.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://morika-lp.vercel.app/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://morika-lp.vercel.app/images/roasting-fire.jpg"
+      },
+      "dateModified": "2026-08-03",
+      "inLanguage": "ja-JP",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "杜花はどこで焙煎していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "岐阜県瑞浪市の、人里から離れた森で焙煎しています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "杜花はどのように焙煎していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "備長炭の直火を読み、蓋付きの網籠を手で振り続ける掌焙煎です。一度100gずつ仕上げます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "杜花のコーヒー豆はどこで購入できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "月産500g限定で、杜花の公式オンラインストアにて販売しています。"
+          }
+        }
+      ]
     }
   ]
 }
@@ -607,6 +653,48 @@
     margin-bottom: 3rem;
   }
 
+  .facts-card {
+    margin-bottom: 1px;
+    padding: 2rem;
+    background: var(--forest);
+    color: var(--paper);
+  }
+
+  .facts-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .facts-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .facts-list dt {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--ash);
+  }
+
+  .facts-list dd {
+    margin-top: 0.35rem;
+    font-size: 0.84rem;
+    line-height: 1.8;
+  }
+
+  .facts-note {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(245, 240, 232, 0.2);
+    font-size: 0.68rem;
+    line-height: 1.8;
+    color: var(--ash);
+  }
+
   .faq-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -771,6 +859,8 @@
     .process-stage-detail { display: none; }
     .process-caption { padding: 0 0.5rem; font-size: 0.78rem; }
     .faq { padding: 0 1.25rem 6rem; }
+    .facts-card { padding: 1.5rem; }
+    .facts-list { grid-template-columns: 1fr; gap: 1rem; }
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item { padding: 1.5rem; }
     .beans-header { flex-direction: column; align-items: flex-start; }
@@ -998,6 +1088,36 @@
     <p class="section-label reveal">about morika</p>
     <h2 class="concept-title reveal" id="faq-title">杜花のコーヒーについて</h2>
   </div>
+  <aside class="facts-card reveal" aria-labelledby="facts-title">
+    <h3 class="facts-title" id="facts-title">杜花 公式情報</h3>
+    <dl class="facts-list">
+      <div>
+        <dt>ブランド名</dt>
+        <dd>杜花（もりか）</dd>
+      </div>
+      <div>
+        <dt>焙煎地</dt>
+        <dd>岐阜県瑞浪市の森</dd>
+      </div>
+      <div>
+        <dt>焙煎方法</dt>
+        <dd>備長炭の直火による掌焙煎</dd>
+      </div>
+      <div>
+        <dt>一回の焙煎量</dt>
+        <dd>100g</dd>
+      </div>
+      <div>
+        <dt>月間生産量</dt>
+        <dd>最大500g</dd>
+      </div>
+      <div>
+        <dt>販売場所</dt>
+        <dd>杜花公式オンラインストア</dd>
+      </div>
+    </dl>
+    <p class="facts-note">このページは杜花の公式情報です。商品価格・在庫状況は公式オンラインストアで最新情報をご確認ください。最終確認：<time datetime="2026-08-03">2026年8月3日</time></p>
+  </aside>
   <dl class="faq-grid">
     <div class="faq-item reveal">
       <dt class="faq-question">どこで焙煎していますか？</dt>
@@ -1005,7 +1125,7 @@
     </div>
     <div class="faq-item reveal">
       <dt class="faq-question">どのように焙煎していますか？</dt>
-      <dd class="faq-answer">備長炭の火を読み、蓋付きの網籠を手で振り続ける掌焙煎です。色・音・香りの変化を見ながら、一度100gずつ仕上げます。</dd>
+      <dd class="faq-answer">備長炭の直火を読み、蓋付きの網籠を手で振り続ける掌焙煎です。色・音・香りの変化を見ながら、一度100gずつ仕上げます。</dd>
     </div>
     <div class="faq-item reveal">
       <dt class="faq-question">どんなコーヒー豆がありますか？</dt>
