@@ -821,6 +821,75 @@
     margin: 0 auto;
   }
 
+  .contact {
+    padding: 0 2rem 8rem;
+  }
+
+  .contact-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem);
+    background: var(--cream);
+  }
+
+  .contact-title {
+    margin-top: 0.8rem;
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 600;
+  }
+
+  .contact-lead {
+    margin-top: 1rem;
+    color: #6f6256;
+    font-size: 0.85rem;
+    line-height: 1.9;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-form label {
+    display: grid;
+    gap: 0.45rem;
+    color: var(--forest);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #c8b89a;
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .contact-form textarea { min-height: 150px; resize: vertical; }
+
+  .contact-form button {
+    justify-self: start;
+    min-height: 48px;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--forest);
+    background: var(--forest);
+    color: var(--paper);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .contact-note {
+    color: #6f6256;
+    font-size: 0.68rem;
+    line-height: 1.7;
+  }
+
   .faq-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -1415,6 +1484,30 @@
       <dd class="faq-answer">月産500g限定で、<a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=faq" target="_blank" rel="noopener">杜花の公式オンラインストア</a>にて販売しています。売り切れの際は、次の焙煎をお待ちください。</dd>
     </div>
   </dl>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner reveal">
+    <p class="section-label">contact</p>
+    <h2 class="contact-title" id="contact-title">お問い合わせ</h2>
+    <p class="contact-lead">商品や焙煎についてのご質問はこちらからどうぞ。確認後、メールでお返事します。</p>
+    <form class="contact-form" action="https://formsubmit.co/watayan0929@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="杜花サイトからのお問い合わせ">
+      <input type="hidden" name="_next" value="https://morika-lp.vercel.app/#contact">
+      <label>お名前
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>メールアドレス
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>お問い合わせ内容
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <p class="contact-note">入力いただいた内容は、お問い合わせへの返信にのみ使用します。</p>
+      <button type="submit">送信する</button>
+    </form>
+  </div>
 </section>
 
 <!-- CTA -->
