@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="53zGJ3S5Tn5TXdBLxYRwgOhvQoasQyENbQ1NIlsoTCk" />
 <meta name="google-site-verification" content="BwYCHT9dDEjR4gjpQQFRvR9N5mAC6qT9rZayF56_L6o" />
-<meta name="description" content="岐阜県瑞浪市の森から届ける杜花（もりか）の自家焙煎コーヒー。焙煎の安定性を求め、炭火からガス式ロースターへ。月産500g限定でオンライン販売しています。">
+<meta name="description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆は公式オンラインストアでご覧いただけます。">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#3a5240">
 <link rel="canonical" href="https://morika-lp.vercel.app/">
@@ -14,13 +14,13 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="杜花">
 <meta property="og:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
-<meta property="og:description" content="焙煎の安定性を求め、炭火からガス式ロースターへ。一度100gずつ、月産500g限定で届ける杜花の自家焙煎珈琲。">
+<meta property="og:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
 <meta property="og:url" content="https://morika-lp.vercel.app/">
 <meta property="og:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
 <meta property="og:image:alt" content="岐阜県瑞浪市の森でコーヒー豆を自家焙煎する様子">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
-<meta name="twitter:description" content="焙煎の安定性を求め、炭火からガス式ロースターへ。一度100gずつ、月産500g限定で届ける杜花の自家焙煎珈琲。">
+<meta name="twitter:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
 <meta name="twitter:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
 <meta name="twitter:image:alt" content="岐阜県瑞浪市の森でコーヒー豆を自家焙煎する様子">
 <script>
@@ -55,7 +55,7 @@
       "url": "https://morika-lp.vercel.app/",
       "name": "杜花",
       "alternateName": "杜花（もりか）",
-      "description": "岐阜・瑞浪の森でガス式ロースターを使い、一度100gずつ自家焙煎するコーヒー豆。",
+      "description": "豆ごとの香りを確かめながら、岐阜・瑞浪の森で一度100gずつ自家焙煎するコーヒー豆。",
       "inLanguage": "ja-JP",
       "publisher": {
         "@id": "https://morika-lp.vercel.app/#organization"
@@ -66,7 +66,7 @@
       "@id": "https://morika-lp.vercel.app/#webpage",
       "url": "https://morika-lp.vercel.app/",
       "name": "杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー",
-      "description": "岐阜県瑞浪市の森で、ガス式ロースターを使って一度100gずつ自家焙煎する杜花の公式ページ。",
+      "description": "豆ごとの香りを確かめ、岐阜県瑞浪市の森で100gずつ自家焙煎する杜花の公式ページ。",
       "isPartOf": {
         "@id": "https://morika-lp.vercel.app/#website"
       },
@@ -1132,8 +1132,13 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { min-height: 50vh; padding: 3rem 2rem; }
-    .hero-right { padding: 3rem 2rem 5rem; }
+    .hero-left { min-height: 34vh; padding: 2rem 1.5rem; }
+    .hero-logo .kanji { font-size: clamp(4rem, 17vw, 6rem); }
+    .hero-right { padding: 2.5rem 1.5rem 3.5rem; }
+    .hero-tagline { font-size: clamp(1.55rem, 6vw, 2rem); line-height: 1.65; }
+    .hero-sub { margin-top: 1.25rem; }
+    .hero-divider { margin: 1.25rem 0; }
+    .hero-actions { margin-top: 1.25rem; gap: 0.75rem; }
     .beans-grid { grid-template-columns: 1fr; gap: 1px; }
     .process-steps { grid-template-columns: 1fr; gap: 2rem; }
     .process-steps::before { display: none; }
@@ -1200,18 +1205,17 @@
 
   <div class="hero-right">
     <p class="hero-tagline">
-      森の中で、<br>
-      一粒一粒を<br>
-      見つめて焼く。
+      豆の個性を、<br>
+      香りで楽しむ一杯に。
     </p>
     <div class="hero-divider"></div>
     <p class="hero-sub">
       人里離れた、岐阜・瑞浪の森から。<br>
-      森の小さな自家焙煎。<br>
-      その日の気温と、豆の声を聞きながら。
+      豆ごとの香りや表情を確かめながら、<br>
+      ガス式ロースターで100gずつ自家焙煎しています。
     </p>
     <div class="hero-actions">
-      <a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=hero" class="hero-cta" target="_blank" rel="noopener" aria-label="杜花のオンラインストアで販売中の豆を見る（新しいタブ）">販売中の豆を見る</a>
+      <a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=hero" class="hero-cta" target="_blank" rel="noopener" aria-label="杜花の公式オンラインストアでコーヒー豆を見る（新しいタブ）">オンラインストアで豆を選ぶ</a>
       <p class="hero-availability">月産500g限定<br>一度に焼けるのは100gだけ</p>
     </div>
     <p class="hero-store-note">在庫・販売状況は公式オンラインストアでご確認ください。</p>
