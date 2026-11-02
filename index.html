@@ -16,12 +16,12 @@
 <meta property="og:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
 <meta property="og:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
 <meta property="og:url" content="https://morika-lp.vercel.app/">
-<meta property="og:image" content="https://morika-lp.vercel.app/images/hero-generated.png">
+<meta property="og:image" content="https://morika-lp.vercel.app/images/hero-generated.webp">
 <meta property="og:image:alt" content="杜花のメインビジュアル。森の中のロースターと杜花の案内">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
 <meta name="twitter:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
-<meta name="twitter:image" content="https://morika-lp.vercel.app/images/hero-generated.png">
+<meta name="twitter:image" content="https://morika-lp.vercel.app/images/hero-generated.webp">
 <meta name="twitter:image:alt" content="杜花のメインビジュアル。森の中のロースターと杜花の案内">
 <script>
   if (window.location.hostname === 'ikedaiko6-oss.github.io') {
@@ -43,7 +43,7 @@
       "description": "岐阜県瑞浪市の森で、ガス式ロースターを使い少量ずつコーヒー豆を自家焙煎する杜花。",
       "image": {
         "@type": "ImageObject",
-        "url": "https://morika-lp.vercel.app/images/hero-generated.png"
+        "url": "https://morika-lp.vercel.app/images/hero-generated.webp"
       },
       "sameAs": [
         "https://morikacoffee.base.shop/"
@@ -75,7 +75,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://morika-lp.vercel.app/images/hero-generated.png"
+        "url": "https://morika-lp.vercel.app/images/hero-generated.webp"
       },
       "dateModified": "2026-10-22",
       "inLanguage": "ja-JP",
@@ -177,7 +177,7 @@
   ]
 }
 </script>
-<link rel="preload" as="image" href="images/hero-generated.png" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-generated.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&amp;family=Zen+Kaku+Gothic+New:wght@300;400&amp;display=swap" rel="stylesheet">
@@ -1282,13 +1282,89 @@
     }
     .reveal { opacity: 1; transform: none; }
   }
+
+
+  /* ── COFFEE NOTES ── */
+  .coffee-notes {
+    padding: 7rem 2rem;
+    background: #f3efe8;
+    color: var(--ink);
+  }
+
+  .coffee-notes-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .coffee-notes-heading {
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .coffee-notes-heading .section-label { margin-bottom: 1.2rem; }
+  .coffee-notes-heading .concept-title { margin-bottom: 1rem; }
+  .coffee-notes-intro {
+    color: #6a5e51;
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+
+  .coffee-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .coffee-note-card {
+    padding: 2rem 1.6rem;
+    border-top: 2px solid var(--roast);
+    background: rgba(255,255,255,0.68);
+  }
+
+  .coffee-note-number {
+    color: var(--roast);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+
+  .coffee-note-card h3 {
+    margin: 1rem 0 0.85rem;
+    color: var(--ink);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .coffee-note-card p {
+    margin: 0;
+    color: #6a5e51;
+    font-size: 0.84rem;
+    line-height: 2;
+  }
+
+  .coffee-notes-sources {
+    margin: 2rem 0 0;
+    color: #827668;
+    font-size: 0.72rem;
+    line-height: 1.9;
+    text-align: center;
+  }
+
+  .coffee-notes-sources a { color: #5e4938; text-underline-offset: 0.25em; }
+
+  @media (max-width: 760px) {
+    .coffee-notes { padding: 5rem 1.25rem; }
+    .coffee-notes-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+    .coffee-note-card { padding: 1.5rem 1.3rem; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
-  <img class="hero-art" src="images/hero-generated.png" alt="杜花のロゴ、森の中のロースター、オンラインストアへの案内を配したメインビジュアル">
+  <img class="hero-art" src="images/hero-generated.webp" alt="杜花のロゴ、森の中のロースター、オンラインストアへの案内を配したメインビジュアル">
   <div class="hero-content hero-content-sr-only">
     <h1 class="hero-logo">
       <span class="kanji" id="hero-title">杜花</span>
@@ -1585,6 +1661,35 @@
     </div>
   </div>
 </article>
+
+<!-- COFFEE NOTES -->
+<section class="coffee-notes" aria-labelledby="coffee-notes-title">
+  <div class="coffee-notes-inner">
+    <header class="coffee-notes-heading reveal">
+      <p class="section-label">coffee notes</p>
+      <h2 class="concept-title" id="coffee-notes-title">知ると、いつもの一杯が<br>少しおもしろくなる。</h2>
+      <p class="coffee-notes-intro">豆のこと、焙煎のこと、淹れるときのこと。コーヒーの背景にある小さな話を集めました。</p>
+    </header>
+    <div class="coffee-notes-grid">
+      <article class="coffee-note-card reveal">
+        <span class="coffee-note-number">01 · FROM CHERRY TO SEED</span>
+        <h3>コーヒー豆は、果実の中の種。</h3>
+        <p>赤く熟すコーヒーチェリー。その果肉などを取り除き、中の種を乾燥・精選したものが、生豆になります。私たちが「豆」と呼ぶものは、植物としては種なのです。</p>
+      </article>
+      <article class="coffee-note-card reveal">
+        <span class="coffee-note-number">02 · WASHED PROCESS</span>
+        <h3>ウォッシュトは「洗う」だけではない。</h3>
+        <p>果肉を取り除いたあと、種の周りに残る粘液質を発酵工程などで取り除き、水洗して乾燥させる精製方法です。工程の違いは、生豆の香りや味わいの個性にも関わります。</p>
+      </article>
+      <article class="coffee-note-card reveal">
+        <span class="coffee-note-number">03 · THE BLOOM</span>
+        <h3>蒸らしで粉がふくらむのはなぜ？</h3>
+        <p>焙煎中に生じた二酸化炭素は、焙煎後もしばらく豆の中に残り、少しずつ外へ出ていきます。挽いた粉に湯を注いだときの泡やふくらみには、このガスの放出が関係しています。</p>
+      </article>
+    </div>
+    <p class="coffee-notes-sources">参考：<a href="https://sca.coffee/sca-news/25-magazine/issue-10/english/the-fermentation-effect-25-magazine-issue-10-bw558" target="_blank" rel="noopener">Specialty Coffee Association — The Fermentation Effect</a> ／ <a href="https://www.ajca.or.jp/column/4476/" target="_blank" rel="noopener">全日本コーヒー協会 — 加工処理・選別</a> ／ <a href="https://www.sciencedirect.com/science/article/pii/S0963996914000337" target="_blank" rel="noopener">Food Research International — 焙煎後のCO₂放出に関する研究</a></p>
+  </div>
+</section>
 
 <!-- FAQ -->
 <section class="faq" aria-labelledby="faq-title">
