@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#294735"/>
+  <!-- Distant mountain peaks, kept above the mark. -->
+  <path d="M8 24 22 9l8 9 7-6 19 15" fill="none" stroke="#d7c6a4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  <g transform="translate(6.4 6.4) scale(.8)">
+  <!-- 杜: 木 and 土 have separate stems, joined by one continuous crossbar. -->
+  <g fill="none" stroke="#f5f1e8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4">
+    <path d="M24 26v27M17 33h32M42 27v23M35 50h19"/>
+    <!-- 木's two descending strokes continue beyond the cherries. -->
+    <path d="M24 33 18 46M24 33l7 10"/>
+  </g>
+  <!-- Bright red cherries sit midway along the two 木 strokes. -->
+  <circle cx="19" cy="40" r="2.8" fill="#f04438"/>
+  <circle cx="29" cy="37" r="2.8" fill="#f04438"/>
+  </g>
+</svg>

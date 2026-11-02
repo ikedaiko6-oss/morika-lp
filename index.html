@@ -4,11 +4,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8063105108959075" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="53zGJ3S5Tn5TXdBLxYRwgOhvQoasQyENbQ1NIlsoTCk" />
-<meta name="google-site-verification" content="BwYCHT9dDEjR4gjpQQFRvR9N5mAC6qT9rZayF56_L6o" />
 <meta name="description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆は公式オンラインストアでご覧いただけます。">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#3a5240">
+<link rel="icon" type="image/png" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://morika-lp.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
@@ -16,13 +16,13 @@
 <meta property="og:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
 <meta property="og:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
 <meta property="og:url" content="https://morika-lp.vercel.app/">
-<meta property="og:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
-<meta property="og:image:alt" content="岐阜県瑞浪市の森でコーヒー豆を自家焙煎する様子">
+<meta property="og:image" content="https://morika-lp.vercel.app/images/hero-generated.png">
+<meta property="og:image:alt" content="杜花のメインビジュアル。森の中のロースターと杜花の案内">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="杜花（もりか）｜岐阜・瑞浪の森の自家焙煎コーヒー">
 <meta name="twitter:description" content="豆ごとの香りを確かめ、岐阜・瑞浪の森で100gずつ自家焙煎。杜花のコーヒー豆を公式オンラインストアで。">
-<meta name="twitter:image" content="https://morika-lp.vercel.app/images/roasting-fire.jpg">
-<meta name="twitter:image:alt" content="岐阜県瑞浪市の森でコーヒー豆を自家焙煎する様子">
+<meta name="twitter:image" content="https://morika-lp.vercel.app/images/hero-generated.png">
+<meta name="twitter:image:alt" content="杜花のメインビジュアル。森の中のロースターと杜花の案内">
 <script>
   if (window.location.hostname === 'ikedaiko6-oss.github.io') {
     window.location.replace('https://morika-lp.vercel.app/' + window.location.pathname.replace(/^\/morika-lp\/?/, '') + window.location.search + window.location.hash);
@@ -43,7 +43,7 @@
       "description": "岐阜県瑞浪市の森で、ガス式ロースターを使い少量ずつコーヒー豆を自家焙煎する杜花。",
       "image": {
         "@type": "ImageObject",
-        "url": "https://morika-lp.vercel.app/images/roasting-fire.jpg"
+        "url": "https://morika-lp.vercel.app/images/hero-generated.png"
       },
       "sameAs": [
         "https://morikacoffee.base.shop/"
@@ -75,9 +75,9 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://morika-lp.vercel.app/images/roasting-fire.jpg"
+        "url": "https://morika-lp.vercel.app/images/hero-generated.png"
       },
-      "dateModified": "2026-08-03",
+      "dateModified": "2026-10-22",
       "inLanguage": "ja-JP",
       "mainEntity": [
         {
@@ -177,7 +177,7 @@
   ]
 }
 </script>
-<link rel="preload" as="image" href="images/roasting-fire.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-generated.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&amp;family=Zen+Kaku+Gothic+New:wght@300;400&amp;display=swap" rel="stylesheet">
@@ -216,57 +216,73 @@
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left {
-    background: var(--forest) url("images/roasting-fire.jpg") center center/cover no-repeat;
-    display: flex;
-    align-items: flex-end;
-    padding: 4rem 3rem;
-    position: relative;
-  }
-
-  .hero-left::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(26,20,16,0.55) 0%, rgba(26,20,16,0.25) 40%, rgba(26,20,16,0.75) 100%);
-  }
-
-  .hero-left::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 30% 60%, rgba(122,75,40,0.3) 0%, transparent 70%);
-  }
-
-  .tree-bg {
-    position: absolute;
-    inset: 0;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0.08;
-  }
-
-  .tree-svg {
-    width: 80%;
-    height: 80%;
-  }
-
-  .hero-logo {
+    justify-content: flex-end;
     position: relative;
+    overflow: hidden;
+    padding: clamp(1.25rem, 3vw, 3rem);
+    margin: 0.5rem;
+    border-radius: clamp(20px, 2vw, 28px);
+    background: var(--forest);
+  }
+
+  .hero::before {
+    content: none;
+  }
+
+  .hero-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .hero-cta-overlay {
+    position: absolute;
+    z-index: 3;
+    left: 53%;
+    top: 64%;
+    width: 28%;
+    height: 9%;
+    border-radius: 2px;
+  }
+
+  .hero-cta-overlay:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .hero-content {
+    position: absolute;
     z-index: 2;
+    top: 18%;
+    right: 8%;
+    width: min(42%, 520px);
+    margin: 0;
+    padding: 0;
+    transform: none;
   }
 
   .hero-logo .kanji {
     font-family: 'Shippori Mincho', serif;
-    font-size: clamp(5rem, 12vw, 9rem);
+    font-size: clamp(3rem, 5.2vw, 5.25rem);
     font-weight: 800;
     color: var(--paper);
     line-height: 1;
@@ -278,51 +294,45 @@
   .hero-logo .reading {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 300;
-    font-size: 0.9rem;
-    color: var(--ash);
-    letter-spacing: 0.35em;
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.82);
+    letter-spacing: 0.3em;
     margin-top: 0.5rem;
     display: block;
     animation: fadeUp 1.2s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .hero-right {
-    background: var(--cream);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4rem 3.5rem;
-    position: relative;
-  }
-
   .hero-tagline {
+    margin-top: 0.7rem;
     font-family: 'Shippori Mincho', serif;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-size: clamp(0.78rem, 1.45vw, 1.2rem);
     font-weight: 600;
-    line-height: 1.8;
-    color: var(--ink);
+    line-height: 1.35;
+    color: var(--paper);
+    text-wrap: pretty;
     animation: fadeUp 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .hero-sub {
-    margin-top: 2rem;
-    font-size: 0.88rem;
-    line-height: 2;
-    color: #5a4f44;
+    margin-top: 0.25rem;
+    font-size: clamp(0.62rem, 0.8vw, 0.78rem);
+    line-height: 1.65;
+    color: rgba(245,240,232,0.88);
     letter-spacing: 0.05em;
     animation: fadeUp 1.2s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .hero-divider {
-    width: 40px;
+    display: none;
+    width: 48px;
     height: 1px;
-    background: var(--roast);
-    margin: 2rem 0;
+    background: var(--ash);
+    margin: 1.5rem 0 0;
     animation: expand 1.2s 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .hero-actions {
-    margin-top: 2.2rem;
+    margin-top: 0.65rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -334,46 +344,48 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
-    padding: 0.9rem 1.6rem;
-    background: var(--forest);
+    min-height: 30px;
+    padding: 0.45rem 0.85rem;
+    background: rgba(58,82,64,0.88);
     color: var(--paper);
-    font-size: 0.82rem;
-    letter-spacing: 0.16em;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
     text-decoration: none;
-    border: 1px solid var(--forest);
-    transition: background 0.25s, color 0.25s;
+    border: 1px solid rgba(245,240,232,0.25);
+    transition: background 0.25s, color 0.25s, transform 0.25s;
   }
 
   .hero-cta:hover {
     background: transparent;
-    color: var(--forest);
+    color: var(--paper);
+    transform: translateY(-2px);
+  }
+
+  .hero-cta:focus-visible {
+    outline: 3px solid var(--ash);
+    outline-offset: 4px;
   }
 
   .hero-availability {
-    color: #6f6256;
-    font-size: 0.75rem;
+    margin-top: 0.35rem;
+    color: rgba(245,240,232,0.76);
+    font-size: 0.58rem;
     line-height: 1.7;
-    letter-spacing: 0.08em;
-  }
-
-  .hero-store-note {
-    margin-top: 1rem;
-    color: #6f6256;
-    font-size: 0.72rem;
-    line-height: 1.7;
+    letter-spacing: 0.1em;
   }
 
   .scroll-hint {
     position: absolute;
-    bottom: 2.5rem;
-    right: 3.5rem;
+    bottom: 2rem;
+    left: 50%;
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     letter-spacing: 0.2em;
-    color: #8a7d6e;
+    color: rgba(245,240,232,0.75);
+    transform: translateX(-50%);
     animation: fadeIn 2s 1s both;
   }
 
@@ -382,6 +394,12 @@
     height: 1px;
     background: var(--ash);
     animation: expand 1s 1.2s both;
+  }
+
+  @media (min-width: 769px) and (max-width: 1100px) {
+    .hero-content { right: 5%; width: 48%; }
+    .hero-logo .kanji { font-size: clamp(4.5rem, 8vw, 6rem); }
+    .hero-tagline { font-size: clamp(0.95rem, 1.55vw, 1.2rem); }
   }
 
   /* ── CONCEPT ── */
@@ -587,6 +605,36 @@
     text-decoration-thickness: 1px;
   }
 
+  .tasting-note {
+    max-width: 760px;
+    margin: 3rem auto 0;
+    padding: 2rem clamp(1.25rem, 4vw, 3rem);
+    border: 1px solid #3a322a;
+    background: rgba(255,255,255,0.025);
+  }
+
+  .tasting-note-label {
+    margin: 0 0 1rem;
+    color: var(--roast);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+
+  .tasting-note blockquote {
+    margin: 0;
+    color: var(--paper);
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 2;
+  }
+
+  .tasting-note-credit {
+    margin: 1rem 0 0;
+    color: var(--ash);
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
   a:focus-visible {
     outline: 2px solid var(--roast);
     outline-offset: 4px;
@@ -619,6 +667,26 @@
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .process-copy {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    text-align: center;
+  }
+
+  .process-copy p {
+    color: #6a5f54;
+    font-size: 0.92rem;
+    line-height: 1.9;
+  }
+
+  .process-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--forest);
+    font-size: 0.82rem;
+    text-underline-offset: 0.3em;
   }
 
   .process-stage-grid {
@@ -830,6 +898,22 @@
     color: #d4c9bc;
   }
 
+  .roast-log-copy a {
+    color: var(--paper);
+    text-decoration-color: var(--ash);
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+  }
+
+  .roast-log-copy a:hover {
+    color: #fff;
+    text-decoration-color: #fff;
+  }
+
+  .roast-log-copy a:focus-visible {
+    outline-color: #fff;
+  }
+
   .roast-log-data {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -933,6 +1017,18 @@
     color: #6f6256;
     font-size: 0.68rem;
     line-height: 1.7;
+  }
+
+  .contact-status {
+    min-height: 1.5em;
+    color: var(--forest);
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  .contact-form button:disabled {
+    opacity: 0.65;
+    cursor: wait;
   }
 
   .faq-header {
@@ -1131,14 +1227,27 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { min-height: 34vh; padding: 2rem 1.5rem; }
-    .hero-logo .kanji { font-size: clamp(4rem, 17vw, 6rem); }
-    .hero-right { padding: 2.5rem 1.5rem 3.5rem; }
-    .hero-tagline { font-size: clamp(1.55rem, 6vw, 2rem); line-height: 1.65; }
-    .hero-sub { margin-top: 1.25rem; }
-    .hero-divider { margin: 1.25rem 0; }
-    .hero-actions { margin-top: 1.25rem; gap: 0.75rem; }
+    .hero {
+      min-height: 0;
+      aspect-ratio: 1.05 / 1;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 20px;
+      background-position: 36% center;
+    }
+    .hero::before { content: none; }
+    .hero-content { top: 18%; right: 6%; width: 48%; max-width: 560px; margin: 0; padding: 0; transform: none; }
+    .hero-logo .kanji { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .hero-logo .reading { font-size: clamp(0.42rem, 1.9vw, 0.65rem); letter-spacing: 0.16em; }
+    .hero-tagline { margin-top: 0.35rem; font-size: clamp(0.6rem, 2.4vw, 0.82rem); line-height: 1.35; white-space: nowrap; }
+    .hero-sub { margin-top: 0.2rem; font-size: clamp(0.48rem, 1.8vw, 0.65rem); line-height: 1.55; }
+    .hero-divider { display: none; }
+    .hero-actions { margin-top: 0.55rem; gap: 0.5rem; }
+    .hero-cta { min-height: 28px; width: auto; padding: 0.35rem 0.6rem; font-size: 0.46rem; letter-spacing: 0.08em; }
+    .hero-availability { margin-top: 0.3rem; font-size: 0.45rem; }
+    .scroll-hint { display: none; }
     .beans-grid { grid-template-columns: 1fr; gap: 1px; }
     .process-steps { grid-template-columns: 1fr; gap: 2rem; }
     .process-steps::before { display: none; }
@@ -1162,9 +1271,6 @@
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item { padding: 1.5rem; }
     .beans-header { flex-direction: column; align-items: flex-start; }
-    .hero-actions { align-items: flex-start; flex-direction: column; }
-    .hero-cta { width: 100%; }
-    .scroll-hint { display: none; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1181,48 +1287,29 @@
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="tree-bg">
-      <svg class="tree-svg" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 280 L100 140" stroke="#f5f0e8" stroke-width="8" stroke-linecap="round"/>
-        <path d="M100 200 L60 160" stroke="#f5f0e8" stroke-width="4" stroke-linecap="round"/>
-        <path d="M100 170 L140 130" stroke="#f5f0e8" stroke-width="4" stroke-linecap="round"/>
-        <path d="M100 240 L65 210" stroke="#f5f0e8" stroke-width="3" stroke-linecap="round"/>
-        <ellipse cx="100" cy="90" rx="60" ry="75" fill="#f5f0e8" opacity="0.5"/>
-        <ellipse cx="60" cy="120" rx="35" ry="45" fill="#f5f0e8" opacity="0.35"/>
-        <ellipse cx="140" cy="110" rx="40" ry="50" fill="#f5f0e8" opacity="0.35"/>
-        <circle cx="40" cy="150" r="4" fill="#f5f0e8" opacity="0.5"/>
-        <circle cx="155" cy="140" r="3" fill="#f5f0e8" opacity="0.5"/>
-        <circle cx="80" cy="50" r="3" fill="#f5f0e8" opacity="0.4"/>
-      </svg>
-    </div>
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero-art" src="images/hero-generated.png" alt="杜花のロゴ、森の中のロースター、オンラインストアへの案内を配したメインビジュアル">
+  <div class="hero-content hero-content-sr-only">
     <h1 class="hero-logo">
-      <span class="kanji">杜花</span>
+      <span class="kanji" id="hero-title">杜花</span>
       <span class="reading">もりか — 自家焙煎珈琲</span>
     </h1>
-  </div>
-
-  <div class="hero-right">
     <p class="hero-tagline">
-      豆の個性を、<br>
-      香りで楽しむ一杯に。
+      森から、豆の個性を一杯に。
     </p>
     <div class="hero-divider"></div>
     <p class="hero-sub">
-      人里離れた、岐阜・瑞浪の森から。<br>
-      豆ごとの香りや表情を確かめながら、<br>
-      ガス式ロースターで100gずつ自家焙煎しています。
+      岐阜・瑞浪の森で、100gずつ自家焙煎。
     </p>
     <div class="hero-actions">
-      <a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=hero" class="hero-cta" target="_blank" rel="noopener" aria-label="杜花の公式オンラインストアでコーヒー豆を見る（新しいタブ）">オンラインストアで豆を選ぶ</a>
-      <p class="hero-availability">月産500g限定<br>一度に焼けるのは100gだけ</p>
+      オンラインストアで豆を見る
     </div>
-    <p class="hero-store-note">在庫・販売状況は公式オンラインストアでご確認ください。</p>
-    <div class="scroll-hint">
-      <span class="scroll-line"></span>
-      <span>SCROLL</span>
-    </div>
+    <p class="hero-availability">月産最大500g — 一度に焙煎する量 100g</p>
+  </div>
+  <a class="hero-cta-overlay" href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=hero" target="_blank" rel="noopener" aria-label="杜花の公式オンラインストアでコーヒー豆を見る（新しいタブ）"></a>
+  <div class="scroll-hint" aria-hidden="true">
+    <span class="scroll-line"></span>
+    <span>SCROLL TO EXPLORE</span>
   </div>
 </section>
 
@@ -1258,40 +1345,40 @@
       <div class="bean-card reveal">
         <span class="bean-origin">Ethiopia</span>
         <span class="bean-flag">推し</span>
-        <h3 class="bean-name">アモト</h3>
+        <h3 class="bean-name">エチオピア</h3>
         <p class="bean-desc">
           花のような香り、柑橘の余韻。<br>
           焙煎するたびに表情が変わる。<br>
           一番好きな豆です。
         </p>
         <p class="bean-price">
-          <span class="price">¥2,800</span><span class="unit">/ 100g</span>
+          <span class="price">¥1,600</span><span class="unit">/ 100g</span>
           <span class="note">満遍なく火を通すため、一度に焙煎できるのは100gだけ。</span>
         </p>
       </div>
       <div class="bean-card reveal">
         <span class="bean-origin">Colombia</span>
-        <h3 class="bean-name">ウツシ</h3>
+        <h3 class="bean-name">コロンビア</h3>
         <p class="bean-desc">
           甘く、まろやか。<br>
           誰にでも寄り添う、<br>
           やさしいコーヒー。
         </p>
         <p class="bean-price">
-          <span class="price">¥2,800</span><span class="unit">/ 100g</span>
+          <span class="price">¥1,600</span><span class="unit">/ 100g</span>
           <span class="note">満遍なく火を通すため、一度に焙煎できるのは100gだけ。</span>
         </p>
       </div>
       <div class="bean-card reveal">
         <span class="bean-origin">Brazil</span>
-        <h3 class="bean-name">カムナ</h3>
+        <h3 class="bean-name">ブラジル</h3>
         <p class="bean-desc">
           ナッツの香ばしさ、<br>
           深くて落ち着いた苦味。<br>
           朝に飲みたい一杯。
         </p>
         <p class="bean-price">
-          <span class="price">¥2,800</span><span class="unit">/ 100g</span>
+          <span class="price">¥1,600</span><span class="unit">/ 100g</span>
           <span class="note">満遍なく火を通すため、一度に焙煎できるのは100gだけ。</span>
         </p>
       </div>
@@ -1299,85 +1386,36 @@
     <p class="beans-store-link reveal">
       <a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=beans" target="_blank" rel="noopener" aria-label="杜花の三つの豆をオンラインストアで見る（新しいタブ）">三つの豆をオンラインストアで見る →</a>
     </p>
+    <aside class="tasting-note reveal" aria-label="エチオピアの試飲した方の感想">
+      <p class="tasting-note-label">TASTING NOTE · ETHIOPIA</p>
+      <blockquote>カップに顔を近づけたとき、今までにない香りがしました。爽やかというか、フルーティというか……うまく言葉にできないけれど、印象に残る香りです。後味もしっかり残って、とてもおいしい。また飲みたくなるコーヒーでした。</blockquote>
+      <p class="tasting-note-credit">エチオピアを試飲した方の感想（匿名）</p>
+    </aside>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="process">
   <div class="process-header">
-    <p class="section-label reveal">process</p>
-    <h2 class="concept-title reveal">焙煎の手順</h2>
+    <p class="section-label reveal">ROASTER</p>
+    <h2 class="concept-title reveal">炭火から、ガス式ロースターへ。</h2>
   </div>
   <figure class="process-visual reveal">
     <div class="process-photo">
       <img
-        src="images/roasting-process.webp"
-      alt="生豆から煎り上がりまで、火加減と豆の変化を確かめる焙煎の三段階"
-        width="1629"
-        height="966"
+        src="images/roaster-2026-10-11.jpg"
+        alt="コーヒー豆を入れてガス火で焙煎する金属メッシュのロースター"
+        width="5712"
+        height="3213"
         loading="lazy"
         decoding="async"
       >
     </div>
-    <figcaption>
-      <div class="process-stage-grid" aria-label="焙煎の三段階">
-        <div class="process-stage">
-          <div class="process-stage-head">
-            <span class="process-stage-num">01</span>
-            <strong class="process-stage-name">煎り始め</strong>
-          </div>
-          <span class="process-stage-detail">生豆の青白さを見ながら、弱い火から。</span>
-        </div>
-        <div class="process-stage">
-          <div class="process-stage-head">
-            <span class="process-stage-num">02</span>
-            <strong class="process-stage-name">火が入る</strong>
-          </div>
-          <span class="process-stage-detail">音と香りが立ち、豆が飴色へ変わる。</span>
-        </div>
-        <div class="process-stage">
-          <div class="process-stage-head">
-            <span class="process-stage-num">03</span>
-            <strong class="process-stage-name">煎り上がり</strong>
-          </div>
-          <span class="process-stage-detail">豆の色と香りを確かめ、狙った仕上がりへ。</span>
-        </div>
-      </div>
-      <p class="process-caption">
-        火加減を整え、豆の変化を確かめる。<br>
-        色・音・香りを見ながら、一籠ずつ焼いています。
-      </p>
+    <figcaption class="process-copy">
+      <p>炭火では火加減にムラが出やすかったため、焙煎を安定させるためにガス式ロースターへ切り替えました。</p>
+      <a class="process-link" href="#roast-log-2026-10-11">10月11日の導入記録を見る →</a>
     </figcaption>
   </figure>
-  <div class="process-steps">
-    <div class="step reveal">
-      <div class="step-num">一</div>
-      <h3 class="step-title">豆を選ぶ</h3>
-      <p class="step-body">
-        その日の気分と季節で<br>
-        豆を決める。<br>
-        正直な選択。
-      </p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">二</div>
-      <h3 class="step-title">火加減を整える</h3>
-      <p class="step-body">
-        ガス式ロースターで<br>
-        火を調整しながら、<br>
-        豆の変化を確かめる。
-      </p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">三</div>
-      <h3 class="step-title">届ける</h3>
-      <p class="step-body">
-        焙煎日をそのまま記す。<br>
-        鮮度と正直さが<br>
-        唯一の包装。
-      </p>
-    </div>
-  </div>
 </section>
 
 <!-- ROAST LOG -->
@@ -1402,6 +1440,7 @@
         <h3 class="roast-log-bean">タンザニア<br>キリマンジャロ</h3>
         <p class="roast-log-origin">TANZANIA · KILIMANJARO</p>
         <p class="roast-log-story">タンザニア キリマンジャロのウォッシュトを、ややフレンチローストに仕上げました。</p>
+        <p class="roast-log-story"><a href="/french-roast/">フレンチローストとは？味わいと豆の選び方 →</a></p>
         <dl class="roast-log-data">
           <div><dt>精製</dt><dd>ウォッシュト</dd></div>
           <div><dt>焙煎度</dt><dd>ややフレンチロースト</dd></div>
@@ -1594,7 +1633,7 @@
     </div>
     <div class="faq-item reveal">
       <dt class="faq-question">どんなコーヒー豆がありますか？</dt>
-      <dd class="faq-answer">エチオピアの「アモト」、コロンビアの「ウツシ」、ブラジルの「カムナ」の三種です。いずれも100g単位でお届けします。</dd>
+      <dd class="faq-answer">エチオピア、コロンビア、ブラジルの三種です。いずれも100g単位でお届けします。</dd>
     </div>
     <div class="faq-item reveal">
       <dt class="faq-question">どこで購入できますか？</dt>
@@ -1609,9 +1648,8 @@
     <p class="section-label">contact</p>
     <h2 class="contact-title" id="contact-title">お問い合わせ</h2>
     <p class="contact-lead">商品や焙煎についてのご質問はこちらからどうぞ。確認後、メールでお返事します。</p>
-    <form class="contact-form" action="https://formsubmit.co/watayan0929@gmail.com" method="POST">
+    <form class="contact-form" action="/api/contact" method="POST">
       <input type="hidden" name="_subject" value="杜花サイトからのお問い合わせ">
-      <input type="hidden" name="_next" value="https://morika-lp.vercel.app/#contact">
       <label>お名前
         <input type="text" name="name" autocomplete="name" required>
       </label>
@@ -1622,6 +1660,7 @@
         <textarea name="message" rows="6" required></textarea>
       </label>
       <p class="contact-note">入力いただいた内容は、お問い合わせへの返信にのみ使用します。</p>
+      <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
       <button type="submit">送信する</button>
     </form>
   </div>
@@ -1657,6 +1696,32 @@
     });
   }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
+</script>
+<script>
+  const contactForm = document.querySelector('.contact-form');
+  const contactStatus = document.querySelector('#contact-status');
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    contactStatus.textContent = '送信しています…';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error('送信に失敗しました');
+      contactForm.reset();
+      contactStatus.textContent = 'お問い合わせを送信しました。ありがとうございます。';
+    } catch {
+      contactStatus.textContent = '送信できませんでした。時間をおいて、もう一度お試しください。';
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
 </script>
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
