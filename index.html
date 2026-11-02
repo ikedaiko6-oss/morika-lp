@@ -1346,7 +1346,7 @@
   @media (max-width: 768px) {
     .hero {
       min-height: 0;
-      aspect-ratio: 1.05 / 1;
+      aspect-ratio: 16 / 9;
       align-items: center;
       justify-content: flex-end;
       padding: 1rem;
@@ -1354,6 +1354,7 @@
       border-radius: 20px;
       background-position: 36% center;
     }
+    .hero-art { object-fit: contain; }
     .hero::before { content: none; }
     .hero-content { top: 18%; right: 6%; width: 48%; max-width: 560px; margin: 0; padding: 0; transform: none; }
     .hero-logo .kanji { font-size: clamp(2.5rem, 10vw, 4rem); }
