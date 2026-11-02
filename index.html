@@ -1400,6 +1400,13 @@
     padding: 2rem 1.6rem;
     border-top: 2px solid var(--roast);
     background: rgba(255,255,255,0.68);
+    overflow: hidden;
+  }
+
+  .coffee-note-copy {
+    display: block;
+    transform: translateX(var(--coffee-note-slide-x, 0px));
+    will-change: transform;
   }
 
   .coffee-note-number {
@@ -1462,6 +1469,10 @@
     .coffee-notes { padding: 5rem 1.25rem; }
     .coffee-notes-grid { grid-template-columns: 1fr; gap: 0.75rem; }
     .coffee-note-card { padding: 1.5rem 1.3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .coffee-note-copy { transform: none !important; }
   }
 </style>
 </head>
@@ -1787,23 +1798,29 @@
       <p class="coffee-notes-intro">豆のこと、焙煎のこと、淹れるときのこと。コーヒーの背景にある小さな話を集めました。</p>
     </header>
     <div class="coffee-notes-grid">
-      <a class="coffee-note-card reveal" href="/coffee-notes/coffee-cherry/">
-        <span class="coffee-note-number">01 · FROM CHERRY TO SEED</span>
-        <h3>コーヒー豆は、果実のどこにある？</h3>
-        <p>「豆」と呼ぶけれど、植物としては種。果実の中の層をたどると、精製方法の違いも見えてきます。</p>
-        <span class="coffee-note-more">果実から生豆まで読む →</span>
+      <a class="coffee-note-card" href="/coffee-notes/coffee-cherry/">
+        <div class="coffee-note-copy">
+          <span class="coffee-note-number">01 · FROM CHERRY TO SEED</span>
+          <h3>コーヒー豆は、果実のどこにある？</h3>
+          <p>「豆」と呼ぶけれど、植物としては種。果実の中の層をたどると、精製方法の違いも見えてきます。</p>
+          <span class="coffee-note-more">果実から生豆まで読む →</span>
+        </div>
       </a>
-      <a class="coffee-note-card reveal" href="/coffee-notes/washed-natural/">
-        <span class="coffee-note-number">02 · PROCESSING</span>
-        <h3>同じ果実なのに、精製方法で何が変わる？</h3>
-        <p>ウォッシュト、ナチュラル、ハニー。名前の違いを、果実の扱い方から比べます。</p>
-        <span class="coffee-note-more">3つの工程を比べる →</span>
+      <a class="coffee-note-card" href="/coffee-notes/washed-natural/">
+        <div class="coffee-note-copy">
+          <span class="coffee-note-number">02 · PROCESSING</span>
+          <h3>同じ果実なのに、精製方法で何が変わる？</h3>
+          <p>ウォッシュト、ナチュラル、ハニー。名前の違いを、果実の扱い方から比べます。</p>
+          <span class="coffee-note-more">3つの工程を比べる →</span>
+        </div>
       </a>
-      <a class="coffee-note-card reveal" href="/coffee-notes/coffee-bloom/">
-        <span class="coffee-note-number">03 · BREWING</span>
-        <h3>蒸らしで粉がふくらむのは、鮮度の証拠？</h3>
-        <p>泡の正体と、ふくらみだけでは判断できないことを、研究で分かる範囲から解説します。</p>
-        <span class="coffee-note-more">蒸らしの仕組みを読む →</span>
+      <a class="coffee-note-card" href="/coffee-notes/coffee-bloom/">
+        <div class="coffee-note-copy">
+          <span class="coffee-note-number">03 · BREWING</span>
+          <h3>蒸らしで粉がふくらむのは、鮮度の証拠？</h3>
+          <p>泡の正体と、ふくらみだけでは判断できないことを、研究で分かる範囲から解説します。</p>
+          <span class="coffee-note-more">蒸らしの仕組みを読む →</span>
+        </div>
       </a>
     </div>
     <p class="coffee-notes-index-link"><a href="/coffee-notes/">コーヒーの読みもの一覧へ →</a></p>
@@ -1934,6 +1951,15 @@
       const progress = Math.max(0, Math.min(1, (startAt - card.getBoundingClientRect().top) / (startAt - finishAt)));
       const offset = reduceOriginMotion.matches ? 0 : -slideDistance * (1 - progress);
       card.style.setProperty('--origin-slide-x', `${offset}px`);
+    });
+    const coffeeNoteCopies = document.querySelectorAll('.coffee-note-copy');
+    const noteSlideDistance = window.innerWidth <= 768 ? 240 : 320;
+    const noteFinishAt = viewportHeight * 0.38;
+    coffeeNoteCopies.forEach(copy => {
+      const card = copy.closest('.coffee-note-card');
+      const progress = Math.max(0, Math.min(1, (startAt - card.getBoundingClientRect().top) / (startAt - noteFinishAt)));
+      const offset = reduceOriginMotion.matches ? 0 : -noteSlideDistance * (1 - progress);
+      copy.style.setProperty('--coffee-note-slide-x', `${offset}px`);
     });
   };
   const scheduleOriginSlideUpdate = () => {
