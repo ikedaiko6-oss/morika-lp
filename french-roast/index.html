@@ -6,16 +6,16 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="icon" type="image/png" href="/apple-touch-icon.png" sizes="180x180">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="フレンチローストとはどんな焙煎度？苦味や酸味の傾向、豆の選び方を解説。杜花のタンザニア・キリマンジャロを「ややフレンチロースト」に仕上げた記録も紹介します。">
+  <meta name="description" content="フレンチローストとは？コーヒーの焙煎度8段階（ライト〜イタリアン）と浅煎り・中煎り・深煎りの違いを解説。杜花の「ややフレンチロースト」の記録も紹介します。">
   <link rel="canonical" href="https://morika-lp.vercel.app/french-roast/">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="杜花">
-  <meta property="og:title" content="フレンチローストとは？苦味・味わいと豆の選び方｜杜花">
-  <meta property="og:description" content="フレンチローストの一般的な特徴と、杜花の「ややフレンチロースト」の焙煎記録をご紹介します。">
+  <meta property="og:title" content="フレンチローストとは？コーヒー焙煎度8段階と味わい｜杜花">
+  <meta property="og:description" content="ライトからイタリアンまで、コーヒーの焙煎度8段階を比較。杜花の「ややフレンチロースト」の焙煎記録も紹介します。">
   <meta property="og:url" content="https://morika-lp.vercel.app/french-roast/">
   <meta property="og:image" content="https://morika-lp.vercel.app/images/roast-tanzania-kilimanjaro-2026-10-11.jpg">
-  <title>フレンチローストとは？苦味・味わいと豆の選び方｜杜花</title>
+  <title>フレンチローストとは？コーヒー焙煎度8段階と味わい｜杜花</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,13 +26,13 @@
       {
         "@type":"Article",
         "@id":"https://morika-lp.vercel.app/french-roast/#article",
-        "headline":"フレンチローストとは？苦味・味わいと豆の選び方",
-        "description":"フレンチローストの一般的な特徴と、杜花のタンザニア・キリマンジャロをややフレンチローストに仕上げた記録。",
+        "headline":"フレンチローストとは？コーヒー焙煎度8段階と味わい",
+        "description":"ライトからイタリアンまでの焙煎度8段階と、杜花のタンザニア・キリマンジャロをややフレンチローストに仕上げた記録。",
         "inLanguage":"ja-JP",
         "mainEntityOfPage":"https://morika-lp.vercel.app/french-roast/",
         "image":"https://morika-lp.vercel.app/images/roast-tanzania-kilimanjaro-2026-10-11.jpg",
         "datePublished":"2026-10-21",
-        "dateModified":"2026-10-21",
+        "dateModified":"2026-11-02",
         "author":{"@type":"Organization","name":"杜花","url":"https://morika-lp.vercel.app/"},
         "publisher":{"@type":"Organization","name":"杜花","url":"https://morika-lp.vercel.app/"}
       },
@@ -41,6 +41,7 @@
         "mainEntity":[
           {"@type":"Question","name":"フレンチローストはどんな味ですか？","acceptedAnswer":{"@type":"Answer","text":"一般には深い焙煎による香ばしさや苦味が感じられやすく、酸味は穏やかになる傾向があります。豆や焙煎の仕方によって味わいは異なります。"}},
           {"@type":"Question","name":"フレンチローストと深煎りは同じですか？","acceptedAnswer":{"@type":"Answer","text":"フレンチローストは一般に深煎りの段階を指す呼び方です。ただし焙煎度の呼称や境目は店によって異なることがあります。"}},
+          {"@type":"Question","name":"コーヒーの焙煎度8段階はどの店でも共通ですか？","acceptedAnswer":{"@type":"Answer","text":"ライトからイタリアンまでの8段階は分類例のひとつです。焙煎度の呼び方や境目は、国や焙煎所によって異なります。商品を選ぶときは各店の商品説明も確認してください。"}},
           {"@type":"Question","name":"杜花のタンザニアはフレンチローストですか？","acceptedAnswer":{"@type":"Answer","text":"杜花の2026年10月11日の焙煎記録では、タンザニア・キリマンジャロのウォッシュトを「ややフレンチロースト」と記録しています。フレンチローストそのものではなく、ややフレンチローストという仕上がりです。"}}
         ]
       },
@@ -87,6 +88,13 @@
     .roast-card p{font-size:.9rem}
     .facts{display:grid;grid-template-columns:8rem 1fr;gap:.5rem 1rem;font-size:.92rem}
     .facts dt{color:var(--muted)}.facts dd{margin:0}
+    .roast-table-wrap{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);background:rgba(255,255,255,.45)}
+    .roast-level-table{width:100%;min-width:650px;border-collapse:collapse;font-size:.9rem;line-height:1.7}
+    .roast-level-table th,.roast-level-table td{padding:.8rem .9rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    .roast-level-table thead th{background:#ebe5d8;color:var(--forest);font-weight:600}
+    .roast-level-table tbody th{font-weight:600;white-space:nowrap}
+    .roast-level-table tbody tr:last-child th,.roast-level-table tbody tr:last-child td{border-bottom:0}
+    .source-note{font-size:.82rem;color:var(--muted)}
     .faq-item{padding:1rem 0;border-top:1px solid var(--line)}
     .faq-item h3{margin:.2rem 0;font-size:1.05rem}
     .final-cta{text-align:center;padding:3rem 1rem;background:#ebe5d8;border-radius:8px;margin:2.5rem 0}
@@ -106,8 +114,8 @@
     <article>
       <header class="article-head">
         <p class="eyebrow">Roast guide · Morika</p>
-        <h1>フレンチローストとは？<br>苦味・味わいと豆の選び方</h1>
-        <p class="lead">フレンチローストは、一般に深煎りの段階を指す呼び方です。香ばしさや苦味を楽しみたい人に選ばれますが、豆や焙煎の仕方でも印象は変わります。杜花の焙煎記録とあわせて、選ぶときのポイントをまとめました。</p>
+        <h1>フレンチローストとは？<br>コーヒーの焙煎度8段階と味わい</h1>
+        <p class="lead">ライトからイタリアンまで、焙煎度の呼び方と浅煎り・中煎り・深煎りの目安をまとめました。分類は焙煎所によって異なるため、一般的な目安と杜花の実際の焙煎記録を分けて紹介します。</p>
         <a class="button" href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=seo&amp;utm_campaign=french-roast&amp;utm_content=top" target="_blank" rel="noopener">杜花の豆を公式ストアで確認する ↗</a>
         <p class="note">※ 今回の焙煎記録は「フレンチロースト」ではなく「ややフレンチロースト」です。商品の販売状況・在庫は公式ストアでご確認ください。</p>
       </header>
@@ -117,8 +125,29 @@
 
       <section>
         <h2>フレンチローストは、どんな焙煎度？</h2>
-        <p>焙煎度を表す呼び方のひとつで、一般には8段階のうち深い側に位置する「極深煎り」として紹介されます。焙煎が深くなるにつれて、香ばしさや苦味が強まり、酸味は穏やかに感じられる傾向があります。</p>
-        <p>ただし、焙煎度の分類や呼び方の境目はお店によって異なります。「フレンチロースト」と書かれていても、豆の種類や焙煎の考え方によって味わいは同じではありません。</p>
+        <p>フレンチローストは、よく紹介される8段階の分類では深煎りにあたります。焙煎が深くなるほど苦味や香ばしさが前に出やすく、酸味は穏やかに感じられる傾向があります。</p>
+        <p>ただし、焙煎度の分類や呼び方の境目は国やお店によって異なります。以下は焙煎度を知るための代表的な整理例で、すべての焙煎所に共通する規格ではありません。</p>
+      </section>
+
+      <section id="roast-levels">
+        <h2>コーヒーの焙煎度8段階｜浅煎りから深煎りまで</h2>
+        <p>ここでは、ライトからイタリアンへ進む8段階の分類例を紹介します。分類によって「中深煎り」「深煎り」の境目が変わることもあるため、味わいは目安としてご覧ください。</p>
+        <div class="roast-table-wrap" role="region" aria-label="焙煎度8段階の比較表。横にスクロールできます" tabindex="0">
+          <table class="roast-level-table">
+            <thead><tr><th scope="col">順</th><th scope="col">焙煎度</th><th scope="col">分類の目安</th><th scope="col">一般的な特徴の目安</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><th scope="row">ライトロースト</th><td>浅煎り</td><td>うっすら焦げ目がつき、小麦色がかった状態として紹介されています。</td></tr>
+              <tr><td>2</td><th scope="row">シナモンロースト</th><td>浅煎り</td><td>シナモン色を目安にした、ごく浅い焙煎です。</td></tr>
+              <tr><td>3</td><th scope="row">ミディアムロースト</th><td>中煎り</td><td>茶褐色で、軽めの味わいの例として紹介されています。</td></tr>
+              <tr><td>4</td><th scope="row">ハイロースト</th><td>中深煎り</td><td>ミディアムよりやや焙煎が進んだ段階です。</td></tr>
+              <tr><td>5</td><th scope="row">シティロースト</th><td>深煎り</td><td>鮮やかなコーヒーブラウンの色合いです。</td></tr>
+              <tr><td>6</td><th scope="row">フルシティロースト</th><td>深煎り</td><td>ダークブラウンの色合いです。</td></tr>
+              <tr><td>7</td><th scope="row">フレンチロースト</th><td>深煎り</td><td>しっかりした苦味と深い香りが特徴として挙げられます。</td></tr>
+              <tr><td>8</td><th scope="row">イタリアンロースト</th><td>最も深い段階の例</td><td>強い苦味や濃厚さが前に出やすい段階です。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="source-note">分類と特徴の参考：<a href="https://www.ucc.co.jp/enjoy/brew/goodcofee_knowledge_05.html" target="_blank" rel="noopener">UCC「焙煎について」</a>。焙煎度の呼称には地域差や焙煎所ごとの差があります。歴史的な呼び方と基準の違いについては、<a href="https://sca.coffee/sca-news/25/issue-21/what-color-is-your-coffee" target="_blank" rel="noopener">Specialty Coffee Association「What Color Is Your Coffee?」</a>も参照してください。</p>
       </section>
 
       <section>
@@ -149,6 +178,7 @@
         <h2>よくある質問</h2>
         <div class="faq-item"><h3>フレンチローストは苦いですか？</h3><p>一般には苦味や香ばしさが出やすい焙煎度です。ただし、豆や焙煎の仕方、抽出方法で感じ方は異なります。</p></div>
         <div class="faq-item"><h3>フレンチローストと深煎りは同じですか？</h3><p>フレンチローストは一般に深煎りの段階を指します。焙煎度の呼び方や境目は、お店によって異なる場合があります。</p></div>
+        <div class="faq-item"><h3>焙煎度8段階はどの店でも共通ですか？</h3><p>ライトからイタリアンまでの8段階は分類例のひとつです。呼び方や境目は焙煎所によって異なるため、商品ごとの説明も確認してください。</p></div>
         <div class="faq-item"><h3>杜花のタンザニアはフレンチローストですか？</h3><p>2026年10月11日の焙煎記録では「ややフレンチロースト」としています。商品名や焙煎度は、公式ストアの商品表示をご確認ください。</p></div>
       </section>
 
