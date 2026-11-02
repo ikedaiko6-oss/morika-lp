@@ -553,11 +553,15 @@
 
   .bean-card.reveal {
     opacity: 0;
-    transform: translateX(-44px);
-    transition: background 0.4s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(var(--origin-slide-x, -220px));
+    transition: background 0.4s, opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
   }
 
-  .bean-card.reveal.visible { opacity: 1; transform: translateX(0); }
+  .bean-card.reveal.visible {
+    opacity: 1;
+    transform: translateX(var(--origin-slide-x, 0px));
+  }
 
   .bean-card::before {
     content: '';
@@ -1350,7 +1354,8 @@
       transition-duration: 0.01ms !important;
     }
     .reveal { opacity: 1; transform: none; }
-    .bean-card.reveal { opacity: 1; transform: none; }
+    .bean-card.reveal,
+    .bean-card.reveal.visible { opacity: 1; transform: none; }
   }
 
 
@@ -1915,6 +1920,28 @@
     });
   }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
+
+  const originCards = document.querySelectorAll('.bean-card.reveal');
+  const reduceOriginMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let originSlideFrame = 0;
+  const updateOriginSlides = () => {
+    originSlideFrame = 0;
+    const viewportHeight = window.innerHeight;
+    const slideDistance = window.innerWidth <= 768 ? 150 : 220;
+    const startAt = viewportHeight * 0.92;
+    const finishAt = viewportHeight * 0.52;
+    originCards.forEach(card => {
+      const progress = Math.max(0, Math.min(1, (startAt - card.getBoundingClientRect().top) / (startAt - finishAt)));
+      const offset = reduceOriginMotion.matches ? 0 : -slideDistance * (1 - progress);
+      card.style.setProperty('--origin-slide-x', `${offset}px`);
+    });
+  };
+  const scheduleOriginSlideUpdate = () => {
+    if (!originSlideFrame) originSlideFrame = requestAnimationFrame(updateOriginSlides);
+  };
+  window.addEventListener('scroll', scheduleOriginSlideUpdate, { passive: true });
+  window.addEventListener('resize', scheduleOriginSlideUpdate);
+  updateOriginSlides();
 </script>
 <script>
   const contactForm = document.querySelector('.contact-form');
