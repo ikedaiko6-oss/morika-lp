@@ -605,9 +605,38 @@
     text-decoration-thickness: 1px;
   }
 
+  .tasting-voices {
+    max-width: 860px;
+    margin: 5rem auto 0;
+    padding-top: 3.5rem;
+    border-top: 1px solid #3a322a;
+  }
+
+  .tasting-voices-heading {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .tasting-voices-heading .section-label { margin-bottom: 0.8rem; }
+
+  .tasting-voices-title {
+    margin: 0;
+    color: var(--paper);
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    font-weight: 500;
+  }
+
+  .tasting-voices-intro {
+    margin: 0.75rem 0 0;
+    color: var(--ash);
+    font-size: 0.8rem;
+    line-height: 1.9;
+  }
+
   .tasting-note {
     max-width: 760px;
-    margin: 3rem auto 0;
+    margin: 0 auto;
     padding: 2rem clamp(1.25rem, 4vw, 3rem);
     border: 1px solid #3a322a;
     background: rgba(255,255,255,0.025);
@@ -1462,11 +1491,18 @@
     <p class="beans-store-link reveal">
       <a href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=beans" target="_blank" rel="noopener" aria-label="杜花の三つの豆をオンラインストアで見る（新しいタブ）">三つの豆をオンラインストアで見る →</a>
     </p>
-    <aside class="tasting-note reveal" aria-label="エチオピアの試飲した方の感想">
-      <p class="tasting-note-label">TASTING NOTE · ETHIOPIA</p>
-      <blockquote>カップに顔を近づけたとき、今までにない香りがしました。爽やかというか、フルーティというか……うまく言葉にできないけれど、印象に残る香りです。後味もしっかり残って、とてもおいしい。また飲みたくなるコーヒーでした。</blockquote>
-      <p class="tasting-note-credit">エチオピアを試飲した方の感想（匿名）</p>
-    </aside>
+    <section class="tasting-voices" aria-labelledby="tasting-voices-title">
+      <header class="tasting-voices-heading reveal">
+        <p class="section-label">VOICE · ETHIOPIA</p>
+        <h3 class="tasting-voices-title" id="tasting-voices-title">試飲した方の声</h3>
+        <p class="tasting-voices-intro">ここからは商品説明ではなく、エチオピアを実際に飲んだ方からいただいた感想です。</p>
+      </header>
+      <figure class="tasting-note reveal" aria-label="エチオピアの試飲コメント">
+        <p class="tasting-note-label">ETHIOPIA · 試飲コメント</p>
+        <blockquote>カップに顔を近づけたとき、今までにない香りがしました。爽やかというか、フルーティというか……うまく言葉にできないけれど、印象に残る香りです。後味もしっかり残って、とてもおいしい。また飲みたくなるコーヒーでした。</blockquote>
+        <figcaption class="tasting-note-credit">試飲した方の感想（匿名）</figcaption>
+      </figure>
+    </section>
   </div>
 </section>
 
