@@ -551,6 +551,14 @@
 
   .bean-card:hover { background: #2e2620; }
 
+  .bean-card.reveal {
+    opacity: 0;
+    transform: translateX(-44px);
+    transition: background 0.4s, opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bean-card.reveal.visible { opacity: 1; transform: translateX(0); }
+
   .bean-card::before {
     content: '';
     position: absolute;
@@ -1342,6 +1350,7 @@
       transition-duration: 0.01ms !important;
     }
     .reveal { opacity: 1; transform: none; }
+    .bean-card.reveal { opacity: 1; transform: none; }
   }
 
 
