@@ -200,7 +200,7 @@
     color: var(--ink);
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 300;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* ── GRAIN OVERLAY ── */
@@ -233,10 +233,10 @@
   .hero-parallax-stage {
     position: relative;
     z-index: 0;
-    padding-bottom: 24vh;
-    margin-bottom: -24vh;
+    padding-bottom: 100vh;
+    margin-bottom: -100vh;
   }
-  .hero { position: sticky; top: 0; }
+  .hero { position: sticky; top: 0; z-index: 0; }
   main { position: relative; z-index: 1; }
 
   .hero::before {
@@ -481,7 +481,7 @@
   }
 
   @media (max-width: 768px) {
-    .hero-parallax-stage { padding-bottom: 20vh; margin-bottom: -20vh; }
+    .hero-parallax-stage { padding-bottom: 85vh; margin-bottom: -85vh; }
     .morning-coffee img {
       height: auto;
       aspect-ratio: auto;
