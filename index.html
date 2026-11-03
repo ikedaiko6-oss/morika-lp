@@ -269,6 +269,62 @@
     outline-offset: 4px;
   }
 
+  .hero-carousel {
+    position: absolute;
+    z-index: 4;
+    left: 34%;
+    bottom: 1rem;
+    width: min(360px, 34%);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem 0.9rem;
+    color: var(--paper);
+    background: rgba(26, 35, 28, 0.88);
+    border: 1px solid rgba(245, 240, 232, 0.38);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-carousel-viewport { min-width: 0; overflow: hidden; }
+  .hero-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .hero-carousel-track::-webkit-scrollbar { display: none; }
+  .hero-carousel-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    color: inherit;
+    text-decoration: none;
+    scroll-snap-align: start;
+  }
+  .hero-carousel-slide:focus-visible,
+  .hero-carousel-controls button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .hero-carousel-label { color: rgba(245,240,232,.7); font-size: .55rem; letter-spacing: .16em; }
+  .hero-carousel-title { font-family: 'Shippori Mincho', serif; font-size: .88rem; line-height: 1.5; }
+  .hero-carousel-controls { display: flex; align-items: center; gap: .3rem; white-space: nowrap; }
+  .hero-carousel-controls button {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(245,240,232,.45);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--paper);
+    font: inherit;
+    cursor: pointer;
+  }
+  .hero-carousel-status { min-width: 2.2rem; text-align: center; font-size: .58rem; color: rgba(245,240,232,.78); }
+
   .hero-content {
     position: absolute;
     z-index: 2;
@@ -471,6 +527,12 @@
   }
 
   @media (max-width: 768px) {
+    .hero-carousel { left: .7rem; bottom: .7rem; width: min(58%, 300px); gap: .35rem; padding: .5rem .55rem; }
+    .hero-carousel-title { font-size: clamp(.62rem, 2.6vw, .82rem); }
+    .hero-carousel-label { font-size: .45rem; }
+    .hero-carousel-controls { gap: .15rem; }
+    .hero-carousel-controls button { width: 1.55rem; height: 1.55rem; }
+    .hero-carousel-status { min-width: 1.8rem; font-size: .5rem; }
     .morning-coffee img {
       height: auto;
       aspect-ratio: auto;
@@ -484,6 +546,11 @@
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .concept .morning-coffee {
+    width: 100%;
+    margin: 2rem auto 3rem;
   }
 
   .section-label {
@@ -1544,6 +1611,29 @@
     <p class="hero-availability">月産最大500g — 一度に焙煎する量 100g</p>
   </div>
   <a class="hero-cta-overlay" href="https://morikacoffee.base.shop/?utm_source=morika-lp&amp;utm_medium=website&amp;utm_campaign=shop&amp;utm_content=hero" target="_blank" rel="noopener" aria-label="杜花の公式オンラインストアでコーヒー豆を見る（新しいタブ）"></a>
+  <div class="hero-carousel" role="region" aria-roledescription="カルーセル" aria-label="杜花のご案内">
+    <div class="hero-carousel-viewport">
+      <div class="hero-carousel-track" id="hero-carousel-track">
+        <a class="hero-carousel-slide" href="#beans" role="group" aria-roledescription="スライド" aria-label="1 / 3">
+          <span class="hero-carousel-label">COFFEE BEANS</span>
+          <span class="hero-carousel-title">定番の豆を見る</span>
+        </a>
+        <a class="hero-carousel-slide" href="#beans" role="group" aria-roledescription="スライド" aria-label="2 / 3">
+          <span class="hero-carousel-label">LIMITED LOT</span>
+          <span class="hero-carousel-title">時期ごとの限定豆</span>
+        </a>
+        <a class="hero-carousel-slide" href="#roast-log-2026-10-11-tanzania" role="group" aria-roledescription="スライド" aria-label="3 / 3">
+          <span class="hero-carousel-label">ROAST LOG</span>
+          <span class="hero-carousel-title">森の焙煎記録を読む</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-carousel-controls" aria-label="カルーセル操作">
+      <button type="button" id="hero-carousel-prev" aria-label="前の案内">‹</button>
+      <span class="hero-carousel-status" id="hero-carousel-status" aria-live="polite">1 / 3</span>
+      <button type="button" id="hero-carousel-next" aria-label="次の案内">›</button>
+    </div>
+  </div>
   <div class="scroll-hint" aria-hidden="true">
     <span class="scroll-line"></span>
     <span>SCROLL TO EXPLORE</span>
@@ -1556,15 +1646,15 @@
   <p>産地や焙煎、商品についてお気軽にご相談ください。</p>
   <a href="#contact">自家焙煎豆について問い合わせる <span aria-hidden="true">→</span></a>
 </section>
-<figure class="morning-coffee reveal">
-  <img src="images/forest-ground-coffee.webp" alt="早朝の森。木漏れ日の中、林間の木のテーブルに置かれた淹れたてのコーヒー" width="1672" height="941" loading="lazy" decoding="async">
-  <figcaption>森に差す朝の光と、淹れたての一杯</figcaption>
-</figure>
 <section class="concept">
   <p class="section-label reveal">concept</p>
   <h2 class="concept-title reveal">
     余計なものを<br>足さない。
   </h2>
+  <figure class="morning-coffee reveal">
+    <img src="images/forest-ground-coffee.webp" alt="早朝の森。木漏れ日の中、林間の木のテーブルに置かれたククサと淹れたてのコーヒー" width="1672" height="941" loading="lazy" decoding="async">
+    <figcaption>森に差す朝の光と、淹れたての一杯</figcaption>
+  </figure>
   <p class="concept-body reveal">
     新しいロースターと、手の感覚で。<br>
     火加減を確かめながら、一籠ずつ。<br><br>
@@ -2017,6 +2107,31 @@
   window.addEventListener('scroll', scheduleOriginSlideUpdate, { passive: true });
   window.addEventListener('resize', scheduleOriginSlideUpdate);
   updateOriginSlides();
+
+  const heroCarouselTrack = document.querySelector('#hero-carousel-track');
+  if (heroCarouselTrack) {
+    const heroCarouselSlides = [...heroCarouselTrack.querySelectorAll('.hero-carousel-slide')];
+    const heroCarouselStatus = document.querySelector('#hero-carousel-status');
+    let heroCarouselIndex = 0;
+    let heroCarouselFrame = 0;
+    const moveHeroCarousel = (step) => {
+      heroCarouselIndex = (heroCarouselIndex + step + heroCarouselSlides.length) % heroCarouselSlides.length;
+      heroCarouselTrack.scrollTo({
+        left: heroCarouselIndex * heroCarouselTrack.clientWidth,
+        behavior: reduceOriginMotion.matches ? 'auto' : 'smooth'
+      });
+      heroCarouselStatus.textContent = `${heroCarouselIndex + 1} / ${heroCarouselSlides.length}`;
+    };
+    document.querySelector('#hero-carousel-prev').addEventListener('click', () => moveHeroCarousel(-1));
+    document.querySelector('#hero-carousel-next').addEventListener('click', () => moveHeroCarousel(1));
+    heroCarouselTrack.addEventListener('scroll', () => {
+      if (heroCarouselFrame) cancelAnimationFrame(heroCarouselFrame);
+      heroCarouselFrame = requestAnimationFrame(() => {
+        heroCarouselIndex = Math.round(heroCarouselTrack.scrollLeft / heroCarouselTrack.clientWidth);
+        heroCarouselStatus.textContent = `${heroCarouselIndex + 1} / ${heroCarouselSlides.length}`;
+      });
+    }, { passive: true });
+  }
 </script>
 <script>
   const contactForm = document.querySelector('.contact-form');
