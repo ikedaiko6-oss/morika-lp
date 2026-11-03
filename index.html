@@ -236,7 +236,12 @@
     padding-bottom: 100vh;
     margin-bottom: -100vh;
   }
-  .hero { position: sticky; top: 0; z-index: 0; }
+  .hero {
+    position: relative;
+    z-index: 0;
+    transform: translate3d(0, var(--hero-parallax-y, 0px), 0);
+    will-change: transform;
+  }
   main { position: relative; z-index: 1; }
 
   .hero::before {
@@ -1410,6 +1415,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .hero-parallax-stage { padding-bottom: 0; margin-bottom: 0; }
+    .hero { transform: none; will-change: auto; }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
@@ -1995,6 +2002,24 @@
 </footer>
 
 <script>
+  const heroParallaxStage = document.querySelector('.hero-parallax-stage');
+  const heroParallax = heroParallaxStage?.querySelector('.hero');
+  const reduceHeroMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let heroParallaxFrame = 0;
+  const updateHeroParallax = () => {
+    heroParallaxFrame = 0;
+    if (!heroParallax || reduceHeroMotion.matches) return;
+    const scrollRange = window.innerHeight * (window.innerWidth <= 768 ? 0.85 : 1);
+    const offset = Math.max(0, Math.min(scrollRange, -heroParallaxStage.getBoundingClientRect().top));
+    heroParallax.style.setProperty('--hero-parallax-y', `${offset}px`);
+  };
+  const scheduleHeroParallaxUpdate = () => {
+    if (!heroParallaxFrame) heroParallaxFrame = requestAnimationFrame(updateHeroParallax);
+  };
+  window.addEventListener('scroll', scheduleHeroParallaxUpdate, { passive: true });
+  window.addEventListener('resize', scheduleHeroParallaxUpdate);
+  updateHeroParallax();
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
